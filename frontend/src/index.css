@@ -1,0 +1,157 @@
+/* ── Variables ─────────────────────────────────────────────────────────────── */
+:root {
+  --bg: #F5F4F1;
+  --surface: #FFFFFF;
+  --surface-highlight: #d5d5d5;
+  --sidebar-bg: #1B3A3A;
+  --sidebar-text: #C8D9D9;
+  --sidebar-muted: #6B9999;
+  --sidebar-accent: #4E9188;
+  --sidebar-accent-dim: rgba(78, 145, 136, 0.18);
+  --accent: #4E9188;
+  --accent-dark: #3A6E67;
+  --text: #1A2E2E;
+  --text-muted: #6B8080;
+  --border: #E0EDED;
+  --shadow: 0 2px 12px rgba(0,0,0,0.07);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --sidebar-w: 240px;
+  --red: #D9534F;
+  --orange: #E8893C;
+  --green: #4E9188;
+}
+
+[data-theme="dark"] {
+  --bg: #111E1E;
+  --surface: #1A2E2E;
+  --surface-highlight: #1e3838;
+  --sidebar-bg: #0E1616;
+  --text: #E0EDED;
+  --text-muted: #8A9E9E;
+  --border: #2A3E3E;
+  --shadow: 0 2px 12px rgba(0,0,0,0.2);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+body {
+  margin: 0px;
+  color: var(--text)
+}
+
+
+/* ── Layout ─────────────────────────────────────────────────────────────────── */
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ── Main Content ────────────────────────────────────────────────────────────── */
+.main-content {
+  flex: 1;
+  padding: 40px 40px;
+  overflow-y: auto;
+}
+
+.main-bg {
+  background: #404040;
+}
+
+/* ── General-purpose theming ─────────────────────────────────────────────────── */
+
+.box {
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 24px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Safari needs the prefix */
+}
+
+.divider {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 16px;
+}
+
+.divider-col {
+  flex-direction: column;
+}
+
+.divider-item {
+  flex: 1;
+  /* items automatically stretch to fill height by default via align-items: stretch */
+}
+
+/* ── Dashboard ───────────────────────────────────────────────────────────────── */
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.button {
+  background: transparent;
+  border: 2px solid var(--border);
+  color: var(--text);
+  border-radius: 100px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.button:hover {
+  background: var(--bg);
+  color: var(--accent);
+}
+
+/* ── Table ───────────────────────────────────────────────────────────────── */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px 16px;
+}
+
+tr {
+  height: 42px; /* trick: forces browser to compute an explicit row height */
+}
+
+td {
+  height: inherit; /* pull that computed height down into the td */
+  padding: 0;
+}
+
+td .cell-wrapper {
+  display: flex;
+  height: 100%;
+  min-width: 0;
+}
+
+td .cell-wrapper input,
+td .cell-wrapper textarea {
+  flex: 1;
+  border: none;
+  box-sizing: border-box;
+  font: inherit;
+  padding-left: 8px;
+  padding-right: 8px;
+  min-width: 0px;
+}
+
+td .cell-wrapper textarea {
+  resize: none;
+}
