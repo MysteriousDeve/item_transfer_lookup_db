@@ -28,7 +28,7 @@ services:
     build: ./frontend
     container_name: frontend
     ports:
-      - "80:80"
+      - "1024:1024"
     depends_on:
       - backend
 
